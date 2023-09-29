@@ -1,0 +1,19 @@
+version: "3.0"
+services:
+  application:
+    image: springboot-app
+    networks:
+      - springboot-db-net
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysqldb
+  mysqldb:
+    image: mysql:8.0
+    networks:
+      - springboot-db-net
+    enviroment:
+      - MYSQL_ROOT_PASSWORD: test
+      - MYSQL_DATABASE: ordermanagement
+network:
+  - springboot-db-net
