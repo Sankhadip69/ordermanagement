@@ -13,8 +13,13 @@ services:
     networks:
       - springboot-db-net
     environment:
-       MYSQL_ROOT_PASSWORD: "test"
-       MYSQL_DATABASE: "ordermanagement"
+      MYSQL_ROOT_PASSWORD: "test"
+      MYSQL_DATABASE: "ordermanagement"
+    volumes:
+      - app_data:/var/lib/mysql
 
 networks:
   springboot-db-net:
+
+volumes:
+  app_data:
