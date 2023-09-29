@@ -12,8 +12,9 @@ services:
     image: mysql:8.0
     networks:
       - springboot-db-net
-    enviroment:
-      - MYSQL_ROOT_PASSWORD: test
-      - MYSQL_DATABASE: ordermanagement
-network:
-  - springboot-db-net
+    environment:
+       MYSQL_ROOT_PASSWORD: "test"
+       MYSQL_DATABASE: "ordermanagement"
+
+networks:
+  springboot-db-net:
